@@ -1,39 +1,28 @@
-/* ==================== MOBILE MENU ==================== */
-
 const menuBtn = document.getElementById("menuBtn");
 const navLinks = document.getElementById("navLinks");
 
-// Open and close mobile menu
-menuBtn.addEventListener("click", () => {
+menuBtn.addEventListener("click", function () {
 
-navLinks.classList.toggle("active");
+    navLinks.classList.toggle("active");
 
-// Change hamburger icon
-if (navLinks.classList.contains("active")) {
-    menuBtn.textContent = "✕";
-    menuBtn.setAttribute("aria-label", "Close menu");
-} else {
-    menuBtn.textContent = "☰";
-    menuBtn.setAttribute("aria-label", "Open menu");
-}
-
+    if (navLinks.classList.contains("active")) {
+        menuBtn.textContent = "✕";
+    } else {
+        menuBtn.textContent = "☰";
+    }
 
 });
 
-// Close menu when a navigation link is clicked
 const navItems = document.querySelectorAll(".nav-links a");
 
-navItems.forEach((link) => {
+navItems.forEach(function (item) {
 
-link.addEventListener("click", () => {
+    item.addEventListener("click", function () {
 
-    navLinks.classList.remove("active");
+        navLinks.classList.remove("active");
 
-    menuBtn.textContent = "☰";
+        menuBtn.textContent = "☰";
 
-    menuBtn.setAttribute("aria-label", "Open menu");
-
-});
-
+    });
 
 });
